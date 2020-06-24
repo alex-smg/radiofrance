@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../components/login/Login.vue'
+import Signup from '../views/Signup.vue'
+import HomeStatus from '../views/HomeStatus.vue'
 
 Vue.use(VueRouter);
 
@@ -9,6 +11,16 @@ const routes = [
         path: '/login',
         name: 'login',
         component: Login
+    },
+    {
+        path: '/signup',
+        name: 'signup',
+        component: Signup
+    },
+    {
+        path: '/homeStatus',
+        name: 'homeStatus',
+        component: HomeStatus
     },
     /*{ path: "*", component: PageNotFound }*/
 ];

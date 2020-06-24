@@ -16,6 +16,12 @@ export default {
 </script>
 
 <style lang="scss">
+  * {
+    font-family: sans-serif;
+    color: #262623;
+    margin: 0;
+    padding: 0;
+  }
 #app {
   .btn-primary {
     background-color: #0078D7;
@@ -24,6 +30,7 @@ export default {
     padding: 8px 50px;
     border-radius: 20px;
     border: none;
+    cursor: pointer;
   }
 
 }

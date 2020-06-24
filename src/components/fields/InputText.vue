@@ -17,9 +17,6 @@
                 value: ''
             }
         },
-        mounted() {
-            console.log(this.title)
-        }
     }
 </script>
 <style lang="scss">
