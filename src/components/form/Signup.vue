@@ -59,14 +59,14 @@
                         <h3>Vos centres d’intérêts</h3>
                         <hr>
                     </div>
-                    <p>
+                    <p class="description">
                         Afin de vous proposer des contenus selon vos goûts, sélectionnez les sujets
                         qui correspondent le plus à vos centre d'intérêts.
                         Vous pourrez modifier vos choix dans votre page profil.
                     </p>
                     <ul>
                         <li v-for="categorie in allCategories" :key="categorie._id" :ref="categorie._id" @click.prevent="addCategorie($event, categorie._id)">
-                            {{categorie.name}}
+                            <img src="../../assets/arrowblue.svg"> <p>{{categorie.name}}</p>
                         </li>
                     </ul>
                     <button class="btn-primary" @click.prevent="createUser">S'inscrire</button>
@@ -143,34 +143,56 @@
             display: block;
             cursor: pointer;
         }
-        h2, p {
-            margin-bottom: 32px;
-            line-height: 28px;
+        .firstStep {
+            h2, p {
+                margin-bottom: 32px;
+                line-height: 28px;
+            }
         }
         .secondStep {
             width: 85%;
             margin: auto;
+           .description {
+               margin-bottom: 32px ;
+           }
             ul {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
                 width: 100%;
                 .selectCat {
-                    background-color: #161616;
-                    color: #FFFFFF;
+                    background-color: #FFFFFF;
+                    color: #0078D7;
+                    img {
+                        width: min-content;
+                    }
                     p{
-                        color: #FFFFFF;
+                        color: #0078D7;
+                        margin: auto;
                     }
                 }
                 li {
-                    margin: 10px 0px 0px 0px;
+                    margin: 10px 0px 32px 0px;
                     list-style: none;
-                    padding: 5px 8px 10px 8px;
+                    padding: 5px 8px 0px 8px;
                     width: 28%;
                     border: none;
                     border-bottom: 2px solid #161616;
                     cursor: pointer;
                     transition: 0.5s;
+                    display: flex;
+                    padding-bottom: 10px ;
+                    img {
+                        transition: 0.5s;
+                        width: 0;
+                    }
+                    .showImg {
+
+                    }
+                    p {
+                        transition: 0.5s;
+                        pointer-events: none;
+                    }
                     button {
                         background: transparent;
                         border: none;
@@ -179,7 +201,6 @@
                         margin: 0;
                         
                         p {
-                            margin: 0;
                             font-weight: 700;
                             text-align: left;
                         }

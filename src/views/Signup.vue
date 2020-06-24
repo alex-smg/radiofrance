@@ -1,7 +1,8 @@
 <template>
     <div id="signup">
         <div class="back">
-            <button class="back"><img src="../assets/arrow.svg" />
+            <button class="back" @click="backToStepOne">
+                <img src="../assets/arrow.svg" />
                 <p>Retour</p>
             </button>
         </div>
@@ -37,6 +38,9 @@
             goStepTwo: function() {
                 this.step = 2;
             },
+            backToStepOne: function() {
+              this.step = 1;
+            },
             getCategories: async function () {
                 try {
                     const response = await axios.get(process.env.VUE_APP_API + '/categorie');
@@ -63,6 +67,7 @@
             border: none;
             position: absolute;
             display: flex;
+            cursor: pointer;
             p {
                 display: block;
                 margin: auto;
