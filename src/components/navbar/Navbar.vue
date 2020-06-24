@@ -4,7 +4,9 @@
             <img src="../../assets/logo.svg" alt="logo radiofrance"/>
         </div>-->
         <div class="firstHeader"></div>
-        <div class="secondHeader"></div>
+        <div class="secondHeader">
+            <button @click="$emit('open-modal')">Connexion</button>
+        </div>
     </div>
 </template>
 

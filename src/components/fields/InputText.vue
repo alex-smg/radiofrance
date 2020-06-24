@@ -2,7 +2,7 @@
     <div class="formGroup inputText">
         <label :for="name">
             <input :type="type" :placeholder="placeholder" class="inputText"  v-model="title" :id="id" :name="name" @input="$emit('update:title', $event.target.value)"/>
-            <p>{{label}}</p>
+            <p :class="title !== '' ? 'notEmpty' : ''">{{label}}</p>
         </label>
         <span>{{error}}</span>
     </div>
@@ -30,14 +30,18 @@
                 top: 0;
                 margin: 0;
                 transition: 0.5s;
-                color: #0078D7;
+                color: #161616;
             }
             input {
                 border: none;
-                border-bottom: 2px solid #0078D7;
+                border-bottom: 2px solid #161616;
                 outline: none;
-                padding: 5px;
+                padding: 10px;
 
+            }
+
+            .notEmpty {
+                top: -15px;
             }
             input:focus + p {
                 top: -20px;

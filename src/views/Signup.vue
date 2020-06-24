@@ -1,11 +1,15 @@
 <template>
     <div id="signup">
-        <div class="bread">
-            <button class="back">Retour</button>
-            <bread />
+        <div class="back">
+            <button class="back"><img src="../assets/arrow.svg" />
+                <p>Retour</p>
+            </button>
         </div>
         <div class="form">
             <form-signup :step="step" :allCategories="allCategories" @go-to-step="goStepTwo"/>
+        </div>
+        <div class="bread">
+            <bread />
         </div>
         <!--<button @click="getCategories">test</button>-->
     </div>
@@ -54,16 +58,27 @@
         margin: auto;
         position: relative;
         .back {
-            margin-left: 127px;
+            margin-left: 50px;
             background-color: transparent;
             border: none;
+            position: absolute;
+            display: flex;
+            p {
+                display: block;
+                margin: auto;
+            }
+            img {
+
+                margin:auto 10px;
+            }
         }
         .form {
-            width: 30%;
+            width: 40%;
             margin: auto;
         }
         .bread {
             position: absolute;
+            right: 20%;
         }
     }
     @media screen and (min-width: 200px) and (max-width: 640px) {

@@ -3,7 +3,10 @@
         <div>
             <form>
                 <div v-if="step === 1" class="firstStep">
-                    <h2>Inscription</h2>
+                    <div class="title">
+                        <h3>Inscription</h3>
+                        <hr>
+                    </div>
                     <p>
                         Envie de retrouver vos favoris sur tous vos écrans et profiter d'une expérience
                         personnalisée ? Créer dès maintenant votre compte radiofrance
@@ -16,7 +19,14 @@
                             type="text"
                             class="input"
                     />
-                    <p>{{user.email}}</p>
+                    <input-text
+                            v-bind:title.sync="user.password"
+                            name="password"
+                            id="password"
+                            label="Mot de passe"
+                            type="password"
+                            class="input"
+                    />
                     <input-text
                             v-bind:title.sync="user.lastname"
                             name="lastname"
@@ -39,21 +49,16 @@
                             id="ageInput"
                             label="Age"
                             type="number"
-                            class="input"
-                    />
-                    <input-text
-                            v-bind:title.sync="user.password"
-                            name="password"
-                            id="password"
-                            label="Mot de passe"
-                            type="password"
-                            class="input"
+                            class="input age"
                     />
 
                     <button class="btn-primary" @click.prevent="$emit('go-to-step')">Continuer</button>
                 </div>
                 <div v-if="step === 2" class="secondStep">
-                    <h2>Vos centres d'intérêts</h2>
+                    <div class="title">
+                        <h3>Vos centres d’intérêts</h3>
+                        <hr>
+                    </div>
                     <p>
                         Afin de vous proposer des contenus selon vos goûts, sélectionnez les sujets
                         qui correspondent le plus à vos centre d'intérêts.
@@ -128,34 +133,42 @@
 <style lang="scss" scoped>
     #formSignup {
         .input {
-            margin: 32px 0px;
+            margin: 40px 0px;
+        }
+        .age {
+            width: 20%;
         }
         button {
-            margin: 24px auto;
+            margin: 60px auto;
             display: block;
+            cursor: pointer;
         }
         h2, p {
             margin-bottom: 32px;
             line-height: 28px;
         }
         .secondStep {
+            width: 85%;
+            margin: auto;
             ul {
                 display: flex;
                 flex-wrap: wrap;
+                justify-content: space-between;
+                width: 100%;
                 .selectCat {
-                    background-color: #0078D7;
+                    background-color: #161616;
                     color: #FFFFFF;
                     p{
                         color: #FFFFFF;
                     }
                 }
                 li {
-                    margin: 10px 0px 10px 10px;
+                    margin: 10px 0px 0px 0px;
                     list-style: none;
-                    padding: 5px 8px 20px 8px;
+                    padding: 5px 8px 10px 8px;
                     width: 28%;
-                    border: 2px solid #0078D7;
-                    border-radius: 5px;
+                    border: none;
+                    border-bottom: 2px solid #161616;
                     cursor: pointer;
                     transition: 0.5s;
                     button {

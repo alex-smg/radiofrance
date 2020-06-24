@@ -30,9 +30,9 @@
         display: flex;
         ul {
             list-style: none;
-            margin: 50px 0 0 127px;
+            margin: 35px 0 0 127px;
             padding-left: 30px;
-            border-left: 2px solid #0078D7;
+            border-left: 2px solid #161616;
             height: 75px;
             li {
                 /*margin: 40px 0;*/
@@ -53,11 +53,11 @@
                     .circle {
                         margin-top: -10px;
                         top: 50%;
-                        left: -42px;
-                        width: 20px;
-                        height: 20px;
+                        left: -37px;
+                        width: 10px;
+                        height: 10px;
                         background: #FFFFFF;
-                        border: 1px solid #0078D7;
+                        border: 1px solid #161616;
                         border-radius: 50%;
                         display: block;
                         position: absolute;
