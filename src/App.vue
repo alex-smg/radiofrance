@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Navbar @open-modal="openModal"/>
-    <Login  v-if="modal === true" />
+    <Login @close-modal="closeModal" v-if="modal === true" />
     <router-view/>
   </div>
 </template>
@@ -22,8 +22,10 @@ export default {
   },
   methods: {
     openModal: function () {
-      console.log('test');
       this.modal = true;
+    },
+    closeModal: function () {
+      this.modal = false
     }
   }
 
@@ -36,6 +38,7 @@ export default {
     color: #262623;
     margin: 0;
     padding: 0;
+    outline: none;
   }
 
   .tallTitle {
@@ -54,14 +57,31 @@ export default {
       display: block;
       font-size: 18px;
   }
+  .btn_secondary {
+    background-color: transparent;
+    border: none;
+    transition: 0.5s;
+    cursor: pointer;
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    &:hover {
+      color: #67046B;
+    }
+  }
   .title {
     width: 100%;
     margin-bottom: 10px;
-
     h3 {
       margin-bottom: 15px;
       font-weight: 200;
       text-transform: uppercase;
+    }
+    hr {
+      height: 1.5px;
+      border: none;
+      background-color: #161616;
     }
   }
 

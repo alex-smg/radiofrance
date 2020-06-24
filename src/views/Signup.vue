@@ -55,7 +55,7 @@
 <style lang="scss">
     #signup {
         display: flex;
-        margin: auto;
+        margin: 73px auto 0 auto;
         position: relative;
         .back {
             margin-left: 50px;

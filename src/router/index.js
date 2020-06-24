@@ -2,11 +2,18 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../components/login/Login.vue'
 import Signup from '../views/Signup.vue'
-import HomeStatus from '../views/HomeStatus.vue'
+import HomeStatus from '../views/HomeStatus.vue';
+import Profil from '../views/Profil.vue';
+import Home from '../views/Home.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
+    {
+        path: '/home',
+        name: 'home',
+        component: Home
+    },
     {
         path: '/login',
         name: 'login',
@@ -21,6 +28,11 @@ const routes = [
         path: '/homeStatus',
         name: 'homeStatus',
         component: HomeStatus
+    },
+    {
+        path: '/profil',
+        name: 'profil',
+        component: Profil
     },
     /*{ path: "*", component: PageNotFound }*/
 ];
