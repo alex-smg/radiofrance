@@ -44,7 +44,7 @@
 <style lang="scss" scoped>
     #profilLeft {
         position: fixed;
-        top: 80px;
+        top: 86px;
         height: 100vh;
         width: 25%;
         background-color: #F4F4F4;

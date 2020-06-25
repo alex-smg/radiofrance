@@ -33,13 +33,23 @@ export default {
 </script>
 
 <style lang="scss">
+  @font-face {
+    font-family: "NeueMachina light";
+    src: url("./assets/font/NeueMachina-Light.otf") format("otf");
+  }
+  @font-face {
+    font-family: "NeueMachina regular";
+    src: url("./assets/font/NeueMachina-Regular.otf") format("otf");
+  }
   * {
-    font-family: sans-serif;
+    font-family: "NeueMachina light";
     color: #262623;
     margin: 0;
     padding: 0;
     outline: none;
   }
+
+
 
   .tallTitle {
     text-transform: uppercase;
@@ -47,6 +57,11 @@ export default {
     font-weight: 200;
   }
 #app {
+  hr {
+    height: 1.5px;
+    border: none;
+    background: #161616;
+  }
   .btn-primary {
       background: transparent;
       text-transform: uppercase;

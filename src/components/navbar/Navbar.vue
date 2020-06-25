@@ -18,17 +18,36 @@
                     <span class="live-listen-info-sub-title"></span>
                 </div>
             </div>
-            <div>
-                <div>
+            <div class="right">
+                <div class="btnandSearch">
+                    <div>
+                        <button>Programmes</button>
+                        <button>Podcasts</button>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Rechercher">
+                    </div>
 
                 </div>
                 <div class="name">
-                    <h3>{{$store.state.userSession.firstname + ' ' + $store.state.userSession.lastname}}</h3>
-                    <button class="btn_secondary">Option</button>
+                    <div v-if="!$store.state.userSession.email">
+                        <button @click="$emit('open-modal')">
+                            <img src="../../assets/person.svg" alt="person">
+                        </button>
+                    </div>
+                    <div v-else>
+                        <div>
+                            <div class="containerImg">
+                            </div>
+                        </div>
+                        <div>
+                            <h3>{{$store.state.userSession.firstname + ' ' + $store.state.userSession.lastname}}</h3>
+                            <button class="btn_secondary">Option</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <button @click="$emit('open-modal')">Connexion</button>
     </div>
 </template>
 
@@ -45,16 +64,76 @@
         #header-top {
             height: 80px;
             transition: height .2s,top .2s;
-            background: #802489;
+            background: rgb(255,255,255);
+            background: radial-gradient(circle, rgba(255,255,255,1) 37%, rgba(128,36,137,1) 95%, rgba(128,36,137,1) 100%);
+            background-size: 350%;
             -webkit-transition: height .2s,top .2s;
             transition: height .2s,top .2s;
-            background: #802489;
-            height: 58px;
+            /*background: #802489;*/
+            height: 86px;
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
             display: -webkit-flex;
+            justify-content: space-between;
+            padding: 0px 20px;
             color: #fff;
+            .right{
+                display: flex;
+                align-items: flex-end;
+                .name {
+                    margin: auto;
+                    div {
+                        &:first-child {
+                            display: flex;
+                        }
+                    }
+                    .btn_secondary {
+                        margin: 0;
+                    }
+                    h3 {
+                        font-size: 16px;
+                    }
+                    .containerImg {
+                        width: 40px;
+                        height: 40px;
+                        background-color: #FFFFFF;
+                        border-radius: 80px;
+                        margin-right: 10px;
+                    }
+                    button {
+                        background: transparent;
+                        border: none;
+                        font-size: 12px;
+                    }
+                }
+                .btnandSearch {
+                    margin: auto;
+                    display: flex;
+                    div {
+                        &:first-child {
+                            display: flex;
+                        }
+                    }
+                    button {
+                        color: #FFFFFF;
+                        background: transparent;
+                        border: none;
+                        margin: auto 15px;
+                    }
+                    input {
+                        background-color: #FFFFFF;
+                        font-weight: 500;
+                        font-size: 15px;
+                        height: 36px;
+                        text-indent: 16px;
+                        border: none;
+                        padding-right: 70px;
+                        margin-right: 50px;
+                    }
+                }
+            }
+
             .logo {
                 margin: auto 28px auto 25px;
                 svg {
@@ -62,7 +141,7 @@
                 }
             }
             .live-listen {
-                background-color: #641c6b;
+                background-color: transparent;
                 display: -webkit-box;
                 display: -ms-flexbox;
                 display: flex;
